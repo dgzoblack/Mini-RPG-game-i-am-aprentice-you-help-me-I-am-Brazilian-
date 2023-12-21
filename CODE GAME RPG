@@ -1,6 +1,6 @@
 saldo = 0
 
-vida1 = 500
+vida1= 500
 dano1 = 25
 
 vida2 = 1000
@@ -9,69 +9,75 @@ dano2 = 50
 vida3 = 2000
 dano3 = 100
 
+
 while True:
-    print('1_menu')
-    print('2_loja')
+	print('1_menu')
+	print('2_loja')
 
-    pergunta = str(input('O que deseja fazer?(1/2)'))
-
-    match pergunta:
-        case "1":
-            bosses = ['1_BOSS', '2_BOSS', '3_BOSS']
-            escolha = str(input('escolha um boss(1/2/3)'))
-
-            if escolha == "1":
-                for x in range(20):
-                    print(f'BOSS {vida1}')
-                    bater = str(input('bata no boss com 1'))
-                    if bater == "1":
-                        vida1 -= dano1
-                        saldo += 5
-                        print('Vamos lá!')
-                        print(f'BOSS {vida1}')
-            elif escolha == "2":
-                for x in range(20):
-                    print(f'BOSS {vida2}')
-                    bater = str(input('bata no boss com 1'))
-                    if bater == "1":
-                        vida2 -= dano2
-                        saldo += 10
-                        print('Vamos lá!')
-                        print(f'BOSS {vida2}')
-            elif escolha == "3":
-                for x in range(20):
-                    print(f'BOSS {vida3}')
-                    bater = str(input('bata no boss com 1'))
-                    if bater == "1":
-                        vida3 -= dano3
-                        saldo += 20
-                        print('Vamos lá!')
-                        print(f'BOSS {vida3}')
-        case '2':
-            loja = {
-                'Conquista 1': 500,
-                'Conquista 2': 1000,
-                'Conquista 3': 2000
-            }
-            print(saldo)
-            print(loja)
-            comprar = str(input('qual conquista deseja ? (1/2/3)'))
-
-            if comprar == "1" and saldo >= 500:
-                saldo -= 500
-                print("parabens! voce obteve a conquista 1")
-                print(saldo)
-            elif comprar == "2" and saldo >= 1000:
-                saldo -= 1000
-                print("parabens! voce obteve a conquista 2")
-                print(saldo)
-            elif comprar == '3' and saldo >= 2000:
-                saldo -= 2000
-                print("parabens! voce obteve a conquista 3")
-                print(saldo)
-            else:
-                print('saldo insuficiente ou numero invalido')
-
-    resposta = str(input('deseja continuar?(sim/nao)'))
-    if resposta.lower() == 'nao':
-        break
+	pergunta = str(input('O que deseja fazer?(1/2)'))
+	
+	match pergunta:
+		
+		case "1":
+			Bosses = [
+			'1_BOSS',
+			'2_BOSS',
+			'3_BOSS'
+			]
+			escolha = str(input('escolha um boss(1/2/3)'))
+			if escolha == "1":
+				for x in range(20):
+					print(f'BOSS {vida1}')
+					bater = str(input('bata no boss com 1'))
+					if bater == "1":
+						vida1 = vida1 - dano1
+						saldo = saldo + 5
+						print('Vamos lá!')
+						print(f'BOSS {vida1}')
+			if escolha == "2":
+				for x in range(20):
+					print(f'BOSS {vida2}')
+					bater = str(input('bata no boss com 1'))
+					if bater == "1":
+						vida2 = vida2 - dano2
+						saldo = saldo + 10
+						print('Vamos lá!')
+						print(f'BOSS {vida2}')
+			if escolha == "3":
+				for x in range(20):
+					print(f'BOSS {vida3}')
+					bater = str(input('bata no boss com 1'))
+					if bater == "1":
+						vida3 = vida3 - dano3
+						saldo = saldo + 20
+						print('Vamos lá!')
+						print(f'BOSS {vida3}')
+		case '2':
+			loja = {
+			'Conquista 1': 500,
+			'Conquista 2': 1000,
+			'Conquista 3': 2000
+			}
+			print(saldo)
+			print(loja)	
+			comprar = str(input('qual conquista deseja ? (1/2/3)'))
+			if comprar == "1" and saldo >= 500:
+				saldo = saldo - 500
+				print("parabens! voce obteve a conquista 1")
+				print(saldo)
+			elif comprar == "2" and saldo >= 1000:
+				saldo = saldo - 1000
+				print("parabens! voce obteve a conquista 2")
+				print(saldo)
+			elif comprar == '3' and saldo >= 2000:
+				saldo = saldo - 2000
+				print("parabens! voce obteve a conquista 2")
+				print(saldo)
+			else:
+				print('saldo insuficiente ou numero invalido')
+							
+	resposta = str(input('deseja continuar?(sim/nao)'))
+	if resposta.lower() == 'sim':
+		continue
+	elif resposta.lower() == 'nao':
+		break
